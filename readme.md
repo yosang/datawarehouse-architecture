@@ -19,9 +19,9 @@ We have two `CSV` files which can be found under the folder **[datasets](dataset
 
 ## Architecture
 
-- [Data Lake](0.Data-Lake) - Source files are stored in the cloud in their raw native format.
+- [Data warehouse](0.Datawarehouse) - Microsoft SQL Database used for analytical purposes.
+- [Data Lake](1.Data-Lake) - Source files are stored in the cloud in their raw native format.
 - [ELT Process](1.ELT-Process) - We are extracting the data from our data lake, combining and managing it in a way that supports analytical purposes then loading it into the data warehouse.
-- [Data warehouse](2.Datawarehouse) - Microsoft SQL Database used for analytical purposes.
 - [Visualisation](3.Data-Analysis) - A client tool like `Power BI` allows us to connect to our data warehouse and work with the data for analytical and presentational purposes, which directly supports decision-making processes.
 
 # About data warehouses
