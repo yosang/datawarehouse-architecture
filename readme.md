@@ -1,4 +1,28 @@
-# About
+# Project
+In this project we are going to build a data warehouse architecture using `Microsoft Azure` services.
+
+We have two `CSV` files which which can be found under the folder **datasets**. We want to extract this data, do some adjustments to it so its managable for analytical purposes, then load into our data warehouse. Finally we want to create reports and charts to be able to answer the following business questions:
+
+- Which mobile phone brand has the largest range of products?
+- What is the most popular amount of Memory for mobile phones?
+- What brand has the most expensive selling price of any mobile phone?
+- Which colors are used most often by mobile phone brands?
+
+## Services used
+
+| Layer | Azure Service | Purpose |
+|-------|---------------|---------|
+| Raw Storage | **Azure Data Lake Storage Gen2 (ADLS Gen2)** | A service to store our CSV files on the cloud |
+| Orchestration & ETL | Azure Data Factory (ADF) | Data Lake + SQL Linked services along with Pipeline engine with a ETL Data flow |
+| Analytical Storage | Azure SQL Database | Database storage for the joined dataset |
+| Transformation & BI | Power BI | Final transformation and visualisation |
+
+## File structure and steps
+
+- [datasets](datasets) - Contain the CSV files used for this project
+- [0.Azure-SQL-Server-and-SQL-Databse](0.Azure-SQL-Server-and-SQL-Database) - Contain a readme with the steps required for a `SQL database`
+
+# About data warehouses
 Compared to traditional databases, a data warehouse is more of a concept / system and not a technology.
 
 To quote Bill Inmon:
@@ -68,19 +92,3 @@ The one we are using in this example is `ELT`. We are extracting data from the `
 Although we are doing some minor transformation in `Azure Data Factory`, such as joining data and setting the type for the columns. There is still null values in the data warehouse. These are handled in `Power BI`.
 
 There are some benefits to ELT vs ETL, for examle, when favoring ELT, we dont need to wait for the data to be transformed before it is available to us with `Access Tools` like `Power BI`. Often the data is transformed, "just-enough" for us to work with it in the data warehouse and then we can further enrich it.
-
-## Technologies
-For this example, we are using Azure services
-
-| Layer | Azure Service | Purpose |
-|-------|---------------|-----------------|
-| **Raw Storage** | **Azure Data Lake Storage Gen2 (ADLS Gen2)** | A place to store our CSV files |
-| **Orchestration & ETL** | **Azure Data Factory (ADF)** | Data Lake + SQL Linked services along with Pipeline engine with Extract, Transform, Load Data flow |
-| **Analytical Storage** | **Azure SQL Database** | Storage for the joined dataset |
-| **Transformation & BI** | **Power BI** | Transformation and visualisation |
-
-## Business questions to answer
-- Which mobile phone brand has the largest range of products?
-- What is the most popular amount of Memory for mobile phones?
-- What brand has the most expensive selling price of any mobile phone?
-- Which colors are used most often by mobile phone brands?
