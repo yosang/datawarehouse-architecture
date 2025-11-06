@@ -29,7 +29,11 @@ The logic is the same here, but the server is created, configured and runs on th
         - add current ip adress: `yes`
     - review + create
 
+
 ## SQL Table
 We are going to need a table for the data that is going to be loaded into the database.
 
-Query the database with the [CREATE TABLE query](table.sql) in this folder.
+Once the database is created, query the database with the [CREATE TABLE query](table.sql) in this folder.
+
+# Screenshot
+![alt text](../screenshots/1.Azure-SQL-Database.png)

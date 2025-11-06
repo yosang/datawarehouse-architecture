@@ -1,7 +1,7 @@
 # Project
 In this project we are going to build a data warehouse architecture using `Microsoft Azure` services.
 
-We have two `CSV` files which which can be found under the folder **[datasets](datasets)**. We want to extract this data, do some adjustments to it so its managable for analytical purposes, then load into our data warehouse. Finally we want to create reports and charts using `Power BI` to be able to answer the following business questions:
+We have two `CSV` files which can be found under the folder **[datasets](datasets)**. We want to extract this data, do some adjustments to it so its managable for analytical purposes, then load into our data warehouse. Finally we want to visualise this data using `Power BI` to be able to answer the following business questions:
 
 - Which mobile phone brand has the largest range of products?
 - What is the most popular amount of Memory for mobile phones?
@@ -12,17 +12,17 @@ We have two `CSV` files which which can be found under the folder **[datasets](d
 
 | Layer | Azure Service | Purpose |
 |-------|---------------|---------|
-| Raw Storage | Azure Data Lake Storage Gen2 (ADLS Gen2) | A service to store our CSV files on the cloud |
+| Blob Storage | Azure Data Lake Storage Gen2 (ADLS Gen2) | A service to store our CSV files on the cloud |
 | Orchestration & ETL | Azure Data Factory (ADF) | Data Lake + SQL Linked services along with Pipeline engine with a ETL Data flow |
 | Analytical Storage | Azure SQL Database | Database storage for the joined dataset |
 | Transformation & BI | Power BI | Final transformation and visualisation |
 
-## File structure and steps
+## Architecture
 
-- [datasets](datasets) - Contain the CSV files used for this project.
-- [0.Azure-SQL-Server-and-SQL-Databse](0.Azure-SQL-Server-and-SQL-Database) - Contain the steps required for creating a `SQL database`.
-- [1.Storage-Account-and-Container](1.Storage-Account-and-Container)
-
+- [Data Lake](0.Data-Lake) - Source files are stored in the cloud in their raw native format.
+- [ELT Process](1.ELT-Process) - We are extracting the data from our data lake, combining and managing it in a way that supports analytical purposes then loading it into the data warehouse.
+- [Data warehouse](2.Datawarehouse) - Microsoft SQL Database used for analytical purposes.
+- [Visualisation](3.Data-Analysis) - A client tool like `Power BI` allows us to connect to our data warehouse and work with the data for analytical and presentational purposes, which directly supports decision-making processes.
 
 # About data warehouses
 Compared to traditional databases, a data warehouse is more of a concept / system and not a technology.
@@ -65,7 +65,7 @@ This is the architecture we are using for this example. In short it leverages `D
 
 This architecture is called Medallion Architecture, we can read more up on it here: https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion and here: https://www.databricks.com/glossary/medallion-architecture.
 
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 
 ## Data lake
 A data lake is simply a storage or a resposity that store data in its raw form, including structured or unstructured data.
@@ -89,7 +89,7 @@ The most common techniques used in data integration are:
 
 The one we are using in this example is `ELT`. We are extracting data from the `Data Lake`, doing a simple `join` inside `Azure Data Factory` and the loading it into the `SQL database`. The real transformation happens in `Power BI`, where we replace null values and change the column types to correct format.
 
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 Although we are doing some minor transformation in `Azure Data Factory`, such as joining data and setting the type for the columns. There is still null values in the data warehouse. These are handled in `Power BI`.
 

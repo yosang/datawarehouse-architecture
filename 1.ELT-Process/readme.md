@@ -11,7 +11,7 @@ A Data Factory is a Microsoft Azure Service that allows us to connect to multipl
 # Linked Services
 A linked service is a service from within Azure Data Factory/Synapse, it allows us to link up against multiple sources of data, it can be a storage account, database or some external source.
 
-## Storage Acount
+## Data Lake
 1. From within our `Data Factory Studio`, we want to navigate to `Manage`
 2. From `Manage`, select `Linked services` and select `Azure Data Lake Storage Gen2`
 3. Authentication type is `Account key`
@@ -23,6 +23,9 @@ A linked service is a service from within Azure Data Factory/Synapse, it allows 
 1. Create a linked service for `Azure SQL Database`
 2. Fill out the connection details
 3. Choose the table we created earlier
+
+### Screenshot of the linked services
+![alt text](../screenshots/2.Azure-Data-Factory-Linked-Services.png)
 
 # Pipeline
 A pipeline is series of tasks than can be triggered to perform movement or transformation on data on a scheduled basis.
@@ -38,6 +41,9 @@ A pipeline is series of tasks than can be triggered to perform movement or trans
     - Now we need to select our `Linked Service` 
     - Then select one of the files, we are going to start with `Flipkart_Mobiles.csv`
         - Then create a new Dataset for `Flipkart_Mobiles_Brands.csv`
+
+### Screenshot of the pipeline
+![alt text](../screenshots/4.Pipeline.png)
 
 # Data flow
 A Data flow is a series of tasks that perform a specific set of activities.
@@ -76,3 +82,17 @@ For this project our data flow is going to perform 3 operations
 - The incoming stream will be the `Select` node.
 - Then we need to select where to load this data, so on dataset we select our Linked Service that is the `Azure SQL Database`
 - We dont need to bother with the rest of the configurations.
+
+### Screenshot of the data flow
+![alt text](../screenshots/3.Data-flow.png)
+
+# Validating and running the pipeline
+The final step is to validate everything and debug
+
+1. Choose validate all and then publish all
+2. If no errors show up this means our pipeline is healthy.
+3. Select debug options and debug with runtime.
+4. This will run the steps of our pipeline, its going to take some time, but once everything is finished, without any errors of course, our database should be populated with data that is combined nad joined from our datasets.
+
+### Screenshot of the populated database
+![alt text](../screenshots/5.Database-records.png)
