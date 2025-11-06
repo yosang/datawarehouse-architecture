@@ -21,6 +21,8 @@ We have two `CSV` files which which can be found under the folder **[datasets](d
 
 - [datasets](datasets) - Contain the CSV files used for this project.
 - [0.Azure-SQL-Server-and-SQL-Databse](0.Azure-SQL-Server-and-SQL-Database) - Contain the steps required for creating a `SQL database`.
+- [1.Storage-Account-and-Container](1.Storage-Account-and-Container)
+
 
 # About data warehouses
 Compared to traditional databases, a data warehouse is more of a concept / system and not a technology.
