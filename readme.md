@@ -1,7 +1,7 @@
 # Project
 In this project we are going to build a data warehouse architecture using `Microsoft Azure` services.
 
-We have two `CSV` files which which can be found under the folder **datasets**. We want to extract this data, do some adjustments to it so its managable for analytical purposes, then load into our data warehouse. Finally we want to create reports and charts to be able to answer the following business questions:
+We have two `CSV` files which which can be found under the folder **[datasets](datasets)**. We want to extract this data, do some adjustments to it so its managable for analytical purposes, then load into our data warehouse. Finally we want to create reports and charts using `Power BI` to be able to answer the following business questions:
 
 - Which mobile phone brand has the largest range of products?
 - What is the most popular amount of Memory for mobile phones?
@@ -12,15 +12,15 @@ We have two `CSV` files which which can be found under the folder **datasets**. 
 
 | Layer | Azure Service | Purpose |
 |-------|---------------|---------|
-| Raw Storage | **Azure Data Lake Storage Gen2 (ADLS Gen2)** | A service to store our CSV files on the cloud |
+| Raw Storage | Azure Data Lake Storage Gen2 (ADLS Gen2) | A service to store our CSV files on the cloud |
 | Orchestration & ETL | Azure Data Factory (ADF) | Data Lake + SQL Linked services along with Pipeline engine with a ETL Data flow |
 | Analytical Storage | Azure SQL Database | Database storage for the joined dataset |
 | Transformation & BI | Power BI | Final transformation and visualisation |
 
 ## File structure and steps
 
-- [datasets](datasets) - Contain the CSV files used for this project
-- [0.Azure-SQL-Server-and-SQL-Databse](0.Azure-SQL-Server-and-SQL-Database) - Contain a readme with the steps required for a `SQL database`
+- [datasets](datasets) - Contain the CSV files used for this project.
+- [0.Azure-SQL-Server-and-SQL-Databse](0.Azure-SQL-Server-and-SQL-Database) - Contain the steps required for creating a `SQL database`.
 
 # About data warehouses
 Compared to traditional databases, a data warehouse is more of a concept / system and not a technology.
