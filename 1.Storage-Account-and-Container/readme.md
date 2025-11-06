@@ -1,3 +1,27 @@
+# Data Lake
+When we refer to a Data Lake, we dont refer to a service by itself, instead its a set of capabilities dedicated to big data analytics and is built on top of `Azure Blob Storage` as a configuration.
+
+When creating a storage account, we get the option to use a `Data Lake` as the technology for it.
+
+## Data lake vs Blob Storage
+If we just simply want to store data that is stored for non-analytical purposes, like images or media a simple `Azure Blob Storage` account will do. However, If we plan on doing analytical processing on our data, such as with spreadsheets, CSV files and such, we need to enable `Azure Data Lake Gen2` on the storage account during creation. 
+
+## What is a data lake?
+When explaining what a data lake is, we can simply call it a centralized repository where data does not have to fit a certain structure. Data can be either structures or unstructured and easily stored, accessed or analyzed in its raw / native format.
+
+Read more here: https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction
+
+We can also use these learning materials to explore more on Azure Data Lake Storage Gen2: https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-data-lake-storage/
+
+# Azure Blob Storage
+Consists of 3 resources:
+
+- The storage account
+- A container in the storage account
+- A blob in a container
+
+![alt text](image.png)
+
 # Storage Account
 A storage acount is simply Blob storage (binary large objects) in the cloud where we can store files.
 
