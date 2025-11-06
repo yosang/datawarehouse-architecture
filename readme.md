@@ -12,7 +12,7 @@ We have two `CSV` files which can be found under the folder **[datasets](dataset
 
 | Layer | Azure Service | Purpose |
 |-------|---------------|---------|
-| Blob Storage | Azure Data Lake Storage Gen2 (ADLS Gen2) | A service to store our CSV files on the cloud |
+| Blob Storage | Azure Storage Account with Azure Data Lake Storage Gen2 (ADLS Gen2) | A service to store our CSV files on the cloud |
 | Orchestration & ETL | Azure Data Factory (ADF) | Data Lake + SQL Linked services along with Pipeline engine with a ETL Data flow |
 | Analytical Storage | Azure SQL Database | Database storage for the joined dataset |
 | Transformation & BI | Power BI | Final transformation and visualisation |
